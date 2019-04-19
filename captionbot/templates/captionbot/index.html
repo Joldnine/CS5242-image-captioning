@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Image Captioning</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1>Image Captioning</h1>
+        <form action='' method='get'>
+            <div class="input-group mb-3" style="padding-top:50px;padding-bottom:30px">
+                <input type="text" class="form-control col-md-8" placeholder="enter image url ..." name="url"  value="{{ request.GET.url }}">
+                <div class="input-group-append">
+                    <button class="btn border btn-primary" type="submit">Go</button> 
+                    {% comment %} <button class="btn border btn-info" type="button" onclick="location.href='{% url 'index' 'random'%}'">Random</button>  {% endcomment %}
+                </div>
+            </div>
+        </form>
+        <img src="{{ img_url }}" class="rounded float-left" alt="Cinque Terre"  width="600" height="400">
+        <p class="lead" style="margin-left:630px"> {{ caption }} </p>
+    </div>
+</div>
+</body>
+</html>
